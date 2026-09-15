@@ -325,6 +325,23 @@ body {
   transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .work-card:hover .work-card-img img { transform: scale(1.05); }
+.work-card-img-dual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+.work-card-img-dual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.work-card:hover .work-card-img-dual img { transform: scale(1.05); }
 .work-card-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(to top, rgba(248,246,241,0.9) 0%, transparent 60%);
@@ -701,11 +718,51 @@ body {
   <div class="section-header reveal">
     <div class="section-number">01 — WORKS</div>
     <h2 class="section-title">我的<span class="accent">作品</span></h2>
-    <p class="section-desc">从 H5 游戏到数据大屏，从全栈平台到 AI 工作流——每一个项目都是对"快速交付"与"产品品质"的平衡探索。</p>
+    <p class="section-desc">从运营工作工具到 H5 游戏，从数据大屏到官网前端，从全栈平台到 AI 工作流——每一项都在证明：我能把需求用 AI 快速落地成可运行、有品质的系统。</p>
   </div>
 
   <div class="works-grid">
     <!-- Project 1: Featured -->
+    <div class="work-card reveal">
+      <div class="work-card-img-strip">
+        <div class="strip-screenshots">
+          <img src="assets/ops-01-overview.png" alt="玩家信号-运营总览">
+          <img src="assets/ops-02-intelligence.png" alt="玩家信号-情报中心">
+          <img src="assets/ops-03-tickets.png" alt="玩家信号-客服工作台">
+          <img src="assets/ops-04-ai-top.png" alt="玩家信号-AI客服实验室">
+          <img src="assets/ops-04-ai-bottom.png" alt="玩家信号-AI客服测试">
+          <img src="assets/ops-05-demands.png" alt="玩家信号-体验优化看板">
+          <img src="assets/ops-06-team.png" alt="玩家信号-外包团队质检">
+          <img src="assets/ops-07-evidence.png" alt="玩家信号-原文证据">
+        </div>
+        <div class="strip-bg"></div>
+        <div class="work-card-overlay"></div>
+      </div>
+      <div class="work-card-body">
+        <div class="work-card-num">01</div>
+        <h3 class="work-card-title">玩家信号 · 数字化运营工作台</h3>
+        <p class="work-card-desc">独立用原生前端 + 本地规则模拟做成的完整业务工具：反馈情报聚类、客服工单流转、AI 客服知识边界、体验优化看板与外包质检。把"业务反馈 → 数据分析 → 解决方案落地"的完整闭环落成可交互系统，用 node:test 覆盖核心业务规则——证明"从想法到可运行工具"的全栈落地能力。</p>
+        <div class="work-card-tags">
+          <span class="work-tag">原生前端</span>
+          <span class="work-tag">业务系统</span>
+          <span class="work-tag">AI 客服</span>
+          <span class="work-tag">自动化测试</span>
+          <span class="work-tag">产品闭环</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:28px;align-items:center">
+          <a href="https://hfz1012.github.io/taptap-ops-demo/" target="_blank" class="work-card-link">
+            在线体验
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <a href="https://github.com/HFZ1012/taptap-ops-demo" target="_blank" class="work-card-link">
+            查看 GitHub
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
     <div class="work-card reveal">
       <div class="work-card-img-strip">
         <div class="strip-screenshots">
@@ -719,9 +776,9 @@ body {
         <div class="work-card-overlay"></div>
       </div>
       <div class="work-card-body">
-        <div class="work-card-num">01</div>
+        <div class="work-card-num">02</div>
         <h3 class="work-card-title">绿茵黄金之路 · H5 游戏原型</h3>
-        <p class="work-card-desc">独立设计并开发的 H5 游戏原型，包含 45 名角色卡池、抽卡组队、征程挑战与比赛模拟系统。打通"抽卡→组队→比赛→晋升→成就"的完整核心循环，支持移动端适配、本地存档与战报长图导出。全程 AI 协作开发，Node.js 自动化测试覆盖核心逻辑。</p>
+        <p class="work-card-desc">独立设计并开发的 H5 游戏原型，包含 45 名角色卡池、抽卡组队、征程挑战与比赛模拟系统，打通"抽卡→组队→比赛→晋升→成就"完整核心循环。支持移动端适配、本地存档与战报长图导出；全程 AI 协作开发，Node.js 自动化测试覆盖核心逻辑。</p>
         <div class="work-card-tags">
           <span class="work-tag">HTML/CSS/JS</span>
           <span class="work-tag">AI 编程</span>
@@ -736,25 +793,46 @@ body {
       </div>
     </div>
 
-    <!-- Project 2 -->
+    <!-- Project 3 -->
     <div class="work-card reveal">
-      <div class="work-card-img">
-        <img src="assets/project-dashboard.png" alt="数据可视化大屏">
+      <div class="work-card-img-dual">
+        <img src="assets/project-dashboard.png" alt="上海市体育局体质健康测试展示大屏">
+        <img src="assets/sh-sports-monitor.png" alt="上海市体育局体质监测系统">
         <div class="work-card-overlay"></div>
       </div>
       <div class="work-card-body">
-        <div class="work-card-num">02</div>
-        <h3 class="work-card-title">智能体质健康管理服务平台 · 数据大屏</h3>
-        <p class="work-card-desc">基于 React + DVA + ECharts 独立开发的数据可视化大屏，涵盖区域监测地图、趋势分析、数字画像分布、实时统计卡片等核心模块，实现数据轮播与多分辨率自适应投放。</p>
+        <div class="work-card-num">03</div>
+        <h3 class="work-card-title">上海市体育局双项目 · 数据 → 呈现 → 决策</h3>
+        <p class="work-card-desc">一期交付上海市体育局体质健康测试展示大屏（React + DVA + ECharts），独立完成地图、排行、趋势图等核心图表，采用组件化分区与数据轮播、多分辨率自适应；二期交付体育局体质监测系统（Spring Boot + Vue 3 全栈），覆盖数据接入、统计分析、可视化全链路，并完成达梦（DM）国产化数据库适配与 Redis 会话共享优化。两项独立交付，沉淀完整"数据 → 呈现 → 决策"能力。</p>
         <div class="work-card-tags">
           <span class="work-tag">React</span>
           <span class="work-tag">ECharts</span>
-          <span class="work-tag">DVA</span>
+          <span class="work-tag">Spring Boot</span>
+          <span class="work-tag">Vue 3</span>
+          <span class="work-tag">国产化数据库</span>
         </div>
       </div>
     </div>
 
-    <!-- Project 3 -->
+    <!-- Project 4 -->
+    <div class="work-card reveal">
+      <div class="work-card-img">
+        <img src="assets/sioc-hujinbo-site.png" alt="SIOC 胡金波课题组官网">
+        <div class="work-card-overlay"></div>
+      </div>
+      <div class="work-card-body">
+        <div class="work-card-num">04</div>
+        <h3 class="work-card-title">SIOC 胡金波课题组官网 · 前端开发</h3>
+        <p class="work-card-desc">中科院上海有机化学研究所（SIOC）胡金波课题组官网，完全依据设计稿还原开发整站前端。围绕清晰的视觉层级沟通复杂的课题组信息，兼顾桌面与移动端布局与导航，保障多端视觉还原度与浏览体验——体现高质量 UI 还原、垂类页面设计与产品化实现的细节把控能力。</p>
+        <div class="work-card-tags">
+          <span class="work-tag">官网前端</span>
+          <span class="work-tag">多端适配</span>
+          <span class="work-tag">UI 细节</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 5 -->
     <div class="work-card reveal">
       <div class="work-card-img-split">
         <div class="split-left">
@@ -768,15 +846,14 @@ body {
         <div class="work-card-overlay"></div>
       </div>
       <div class="work-card-body">
-        <div class="work-card-num">03</div>
-        <h3 class="work-card-title">AI 内容生产工作流 & Nebula 游戏平台</h3>
-        <p class="work-card-desc">从 0 搭建 AI 内容生产 SOP，跑通剧本→分镜→概念图→视频全链路，参与浙江卫视"西游记"主题 AI 漫剧项目；独立开发 Nebula 游戏平台，完成用户认证、交易与数据分析后台。</p>
+        <div class="work-card-num">05</div>
+        <h3 class="work-card-title">AI 工作流 & Nebula 游戏平台 · 用系统解决一类问题</h3>
+        <p class="work-card-desc">从 0 搭建 AI 内容生产 SOP，跑通剧本→分镜→概念图→视频全链路，把多人重复流程标准化、工具化，参与浙江卫视"西游记"主题 AI 漫剧项目；独立开发 Nebula 游戏平台前端（用户认证、小游戏交易、数据分析后台界面）；并训练专属 LoRA 模型保证原创 IP 角色一致性。</p>
         <div class="work-card-tags">
-          <span class="work-tag">TypeScript</span>
-          <span class="work-tag">Node.js</span>
-          <span class="work-tag">MongoDB</span>
-          <span class="work-tag">AI 工具链</span>
-          <span class="work-tag">LoRA 训练</span>
+          <span class="work-tag">AI 工作流</span>
+          <span class="work-tag">SOP 制定</span>
+          <span class="work-tag">游戏平台前端</span>
+          <span class="work-tag">LoRA 模型</span>
         </div>
       </div>
     </div>
@@ -948,6 +1025,7 @@ body {
           <div class="contact-item">
             <span class="contact-label">在线作品</span>
             <span class="contact-value"><a href="https://hfz1012.github.io/golden-road/" target="_blank">绿茵黄金之路 — 在线体验</a></span>
+            <span style="margin-top:4px" class="contact-value"><a href="https://hfz1012.github.io/taptap-ops-demo/" target="_blank">玩家信号工作台 — 在线体验</a></span>
           </div>
           <a href="mailto:hfz121829@163.com" class="contact-cta">
             发送邮件
