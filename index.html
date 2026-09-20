@@ -318,6 +318,27 @@ body {
   transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .work-card:hover .work-card-img-strip .strip-screenshots img { transform: scale(1.03); }
+.work-card-img-single {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 45%;
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+.work-card-img-single .single-bg {
+  position: absolute; inset: 0;
+  background: var(--bg-secondary);
+}
+.work-card-img-single img {
+  position: absolute; inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.work-card:hover .work-card-img-single img { transform: scale(1.02); }
 .work-card-img img {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
@@ -718,11 +739,31 @@ body {
   <div class="section-header reveal">
     <div class="section-number">01 — WORKS</div>
     <h2 class="section-title">我的<span class="accent">作品</span></h2>
-    <p class="section-desc">从运营工作工具到 H5 游戏，从数据大屏到官网前端，从全栈平台到 AI 工作流——每一项都在证明：我能把需求用 AI 快速落地成可运行、有品质的系统。</p>
+    <p class="section-desc">从大模型 RAG 智能问答，到运营工作工具、H5 游戏、数据大屏与官网前端——每一项都在证明：我能把需求用 AI 快速落地成可运行、有品质的系统。</p>
   </div>
 
   <div class="works-grid">
     <!-- Project 1: Featured -->
+    <div class="work-card reveal">
+      <div class="work-card-img-single">
+        <div class="single-bg"></div>
+        <img src="assets/rag-02-troubleshoot.png" alt="Abmart Copilot-技术问答带引用">
+      </div>
+      <div class="work-card-body">
+        <div class="work-card-num">01</div>
+        <h3 class="work-card-title">Abmart Copilot · 科研抗体 RAG 技术问答</h3>
+        <p class="work-card-desc">面向生命科学 To B 场景的 LLM 应用作品：调用 DeepSeek 搭建"意图识别 → BM25+元数据混合检索 → 置信度门控 → 回答/转人工 → 引用校验 → 自动评测"的完整 RAG 工作流。回答带来源引用、遇不确定内容自动转人工而非强答；内置 10 条黄金评测集，量化 Hit@3、引用覆盖、拒答门控准确率三项指标。全程 Python 标准库零依赖，可离线演示。</p>
+        <div class="work-card-tags">
+          <span class="work-tag">Python</span>
+          <span class="work-tag">RAG</span>
+          <span class="work-tag">Prompt 工程</span>
+          <span class="work-tag">置信度门控</span>
+          <span class="work-tag">自动评测</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
     <div class="work-card reveal">
       <div class="work-card-img-strip">
         <div class="strip-screenshots">
@@ -739,7 +780,7 @@ body {
         <div class="work-card-overlay"></div>
       </div>
       <div class="work-card-body">
-        <div class="work-card-num">01</div>
+        <div class="work-card-num">02</div>
         <h3 class="work-card-title">玩家信号 · 数字化运营工作台</h3>
         <p class="work-card-desc">独立用原生前端 + 本地规则模拟做成的完整业务工具：反馈情报聚类、客服工单流转、AI 客服知识边界、体验优化看板与外包质检。把"业务反馈 → 数据分析 → 解决方案落地"的完整闭环落成可交互系统，用 node:test 覆盖核心业务规则——证明"从想法到可运行工具"的全栈落地能力。</p>
         <div class="work-card-tags">
@@ -776,7 +817,7 @@ body {
         <div class="work-card-overlay"></div>
       </div>
       <div class="work-card-body">
-        <div class="work-card-num">02</div>
+        <div class="work-card-num">03</div>
         <h3 class="work-card-title">绿茵黄金之路 · H5 游戏原型</h3>
         <p class="work-card-desc">独立设计并开发的 H5 游戏原型，包含 45 名角色卡池、抽卡组队、征程挑战与比赛模拟系统，打通"抽卡→组队→比赛→晋升→成就"完整核心循环。支持移动端适配、本地存档与战报长图导出；全程 AI 协作开发，Node.js 自动化测试覆盖核心逻辑。</p>
         <div class="work-card-tags">
@@ -801,7 +842,7 @@ body {
         <div class="work-card-overlay"></div>
       </div>
       <div class="work-card-body">
-        <div class="work-card-num">03</div>
+        <div class="work-card-num">04</div>
         <h3 class="work-card-title">上海市体育局双项目 · 数据 → 呈现 → 决策</h3>
         <p class="work-card-desc">一期交付上海市体育局体质健康测试展示大屏（React + DVA + ECharts），独立完成地图、排行、趋势图等核心图表，采用组件化分区与数据轮播、多分辨率自适应；二期交付体育局体质监测系统（Spring Boot + Vue 3 全栈），覆盖数据接入、统计分析、可视化全链路，并完成达梦（DM）国产化数据库适配与 Redis 会话共享优化。两项独立交付，沉淀完整"数据 → 呈现 → 决策"能力。</p>
         <div class="work-card-tags">
@@ -821,7 +862,7 @@ body {
         <div class="work-card-overlay"></div>
       </div>
       <div class="work-card-body">
-        <div class="work-card-num">04</div>
+        <div class="work-card-num">05</div>
         <h3 class="work-card-title">SIOC 胡金波课题组官网 · 前端开发</h3>
         <p class="work-card-desc">中科院上海有机化学研究所（SIOC）胡金波课题组官网，完全依据设计稿还原开发整站前端。围绕清晰的视觉层级沟通复杂的课题组信息，兼顾桌面与移动端布局与导航，保障多端视觉还原度与浏览体验——体现高质量 UI 还原、垂类页面设计与产品化实现的细节把控能力。</p>
         <div class="work-card-tags">
@@ -846,7 +887,7 @@ body {
         <div class="work-card-overlay"></div>
       </div>
       <div class="work-card-body">
-        <div class="work-card-num">05</div>
+        <div class="work-card-num">06</div>
         <h3 class="work-card-title">AI 工作流 & Nebula 游戏平台 · 用系统解决一类问题</h3>
         <p class="work-card-desc">从 0 搭建 AI 内容生产 SOP，跑通剧本→分镜→概念图→视频全链路，把多人重复流程标准化、工具化，参与浙江卫视"西游记"主题 AI 漫剧项目；独立开发 Nebula 游戏平台前端（用户认证、小游戏交易、数据分析后台界面）；并训练专属 LoRA 模型保证原创 IP 角色一致性。</p>
         <div class="work-card-tags">
